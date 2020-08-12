@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./Theme/Theme";
 import * as serviceWorker from "./serviceWorker";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./theme/Theme";
 
 ReactDOM.render(
   <React.StrictMode>

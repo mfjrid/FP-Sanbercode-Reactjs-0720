@@ -1,16 +1,15 @@
 import React from "react";
-import "./Theme/css/theme.css";
-// import Masuk from "./Halaman/Masuk";
-// import Daftar from "./Halaman/Daftar";
-import Home from "./Halaman/Home";
+import Main from "./components/Main";
+import "./App.css";
+import { UserProvider } from "./context/UserContext";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Daftar />
-      <Masuk /> */}
-      <Home />
-    </div>
+    <>
+      <UserProvider>
+        <Main />
+      </UserProvider>
+    </>
   );
 }
 
