@@ -56,7 +56,7 @@ class Home extends Component {
                         </p>
                       </div>
                     </div>
-                    <img src={item.image_url} alt={item.title} />
+                    <img src={item.image_url} alt="Tidak ada gambar" />
                     <div className="kotak-movie"></div>
                   </div>
                 </Grid>

@@ -58,7 +58,22 @@ nav li a {
 }
 
 #sidebar h1 {
-  padding-top: 15px;
+  padding-top: 25px;
+  margin-bottom: 100px;
+}
+
+#sidebar nav li {
+  display: block;
+  padding: 20px 0;
+  padding-left: 10px;
+  margin-left: 0;
+  text-align: left;
+  border-radius: 7px 0 0 7px;
+  transition: 0.2s;
+}
+
+#sidebar nav li:hover {
+  background-color: #303a5e;
 }
 
 section {
