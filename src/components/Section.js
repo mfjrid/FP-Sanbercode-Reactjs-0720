@@ -23,15 +23,19 @@ const Section = () => {
     user ? <Redirect to="/" /> : <Route {...props} />;
 
   return (
-    <section>
+    <>
       <Switch>
-        <Route exact path="/" user={user} component={Home} />
-        <Route exact path="/about" user={user} component={About} />
-        <Route exact path="/register" user={user} component={Register} />
         <LoginRoute exact path="/login" user={user} component={Login} />
-        <PrivateRoute exact path="/movies" user={user} component={Movies} />
+        <Route exact path="/register" user={user} component={Register} />
       </Switch>
-    </section>
+      <section>
+        <Switch>
+          <Route exact path="/" user={user} component={Home} />
+          <Route exact path="/about" user={user} component={About} />
+          <PrivateRoute exact path="/movies" user={user} component={Movies} />
+        </Switch>
+      </section>
+    </>
   );
 };
 

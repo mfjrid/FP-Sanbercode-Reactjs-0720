@@ -35,7 +35,8 @@ class Home extends Component {
   render() {
     return (
       <>
-        <h1>Daftar Film Film Terbaik</h1>
+        <h1>Movie List</h1>
+        <br />
         <div id="article-list">
           <Grid container fixed>
             {this.state.movies.map((item) => {

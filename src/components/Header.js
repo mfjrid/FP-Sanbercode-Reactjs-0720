@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import SearchIcon from "@material-ui/icons/Search";
+import InputBase from "@material-ui/core/InputBase";
 
 const Header = () => {
   const [user, setUser] = useContext(UserContext);
@@ -11,7 +13,11 @@ const Header = () => {
 
   return (
     <header>
-      <img id="logo" src="/img/logo.png" width="200px" alt="logo" />
+      <h1>FilMy.</h1>
+      <div id="search-box">
+        <SearchIcon />
+        <InputBase className="input-search" placeholder="Cari . . ." />
+      </div>
       <nav>
         <ul>
           <li>

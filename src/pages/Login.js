@@ -1,5 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, Component } from "react";
+import axios from "axios";
 import { UserContext } from "../context/UserContext";
+import {
+  Grid,
+  Container,
+  FormGroup,
+  FormControl,
+  TextField,
+  Button,
+} from "@material-ui/core";
 
 const Login = () => {
   const [, setUser] = useContext(UserContext);
@@ -38,25 +47,66 @@ const Login = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Username: </label>
-        <input
-          type="text"
-          name="username"
-          onChange={handleChange}
-          value={input.username}
-        />
-        <br />
-        <label>Password: </label>
-        <input
-          type="password"
-          name="password"
-          onChange={handleChange}
-          value={input.password}
-        />
-        <br />
-        <button>Login</button>
-      </form>
+      <div className="login-page">
+        <Container fixed style={{ margin: "50px" }}>
+          <Grid container spacing={3}>
+            <Grid item md={7} className="judul">
+              <h1>FilMy.</h1>
+              <p>
+                Filmy membantu kamu memilih film terbaik untuk ditonton dengan
+                menampilkan review-review film dari orang lain. Kamu juga bisa
+                membuat review film yang telah kamu tonton.
+              </p>
+            </Grid>
+            <Grid item md={1}></Grid>
+            <Grid item md={4}>
+              <Grid className="login-box">
+                <h3 className="h3-padding">Silahkan Masuk</h3>
+                <form onSubmit={handleSubmit}>
+                  <FormGroup>
+                    <FormControl>
+                      <TextField
+                        onChange={handleChange}
+                        value={input.username}
+                        name="username"
+                        id="outlined-basic"
+                        className="form-fill"
+                        label="Username"
+                        variant="outlined"
+                        fullWidth={true}
+                        required
+                      />
+                      <TextField
+                        id="form-password"
+                        className="form-fill"
+                        label="Password"
+                        variant="outlined"
+                        fullWidth={true}
+                        type="password"
+                        required
+                        name="password"
+                        onChange={handleChange}
+                        value={input.password}
+                      />
+                      <Button
+                        onClick={handleSubmit}
+                        className="button btn-daftar"
+                        variant="contained"
+                        color="primary"
+                      >
+                        Masuk
+                      </Button>
+                    </FormControl>
+                    <p className="silahkan-masuk">
+                      Belum punya Akun? Silahkan <a href="/register">Daftar</a>
+                    </p>
+                  </FormGroup>
+                </form>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
     </>
   );
 };
