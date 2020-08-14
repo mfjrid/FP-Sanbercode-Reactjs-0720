@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Movies.css";
+import { Button } from "@material-ui/core";
 
 const Movies = () => {
   const [movies, setMovies] = useState(null);
@@ -188,51 +189,11 @@ const Movies = () => {
 
   return (
     <>
-      <h1 className="judul-section">Movie List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Year</th>
-            <th>Duration</th>
-            <th>Genre</th>
-            <th>Rating</th>
-            <th>Review</th>
-            <th>Image URL</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies !== null &&
-            movies.map((item, index) => {
-              return (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{item.title}</td>
-                  <td>{item.description}</td>
-                  <td>{item.year}</td>
-                  <td>{item.duration}</td>
-                  <td>{item.genre}</td>
-                  <td>{item.rating}</td>
-                  <td>{item.review}</td>
-                  <td>{item.image_url}</td>
-                  <td style={{ maxWidth: "200px" }}>
-                    <Action itemId={item.id} />
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
-      {/* Form */}
-      <h1 className="judul-section">Movies Form</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="judul-section">Form Tambah Movies</h1>
+      <form className="tambah-movie" onSubmit={handleSubmit}>
         <div>
-          <label style={{ float: "left" }}>Title:</label>
+          <label>Title:</label>
           <input
-            style={{ float: "right" }}
             type="text"
             name="title"
             value={input.title}
@@ -242,9 +203,8 @@ const Movies = () => {
           <br />
         </div>
         <div>
-          <label style={{ float: "left" }}>Description:</label>
+          <label>Description:</label>
           <textarea
-            style={{ float: "right" }}
             type="text"
             name="description"
             value={input.description}
@@ -254,9 +214,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Year:</label>
+          <label>Year:</label>
           <input
-            style={{ float: "right" }}
             type="number"
             max={2020}
             min={1980}
@@ -268,9 +227,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Duration:</label>
+          <label>Duration:</label>
           <input
-            style={{ float: "right" }}
             type="number"
             name="duration"
             value={input.duration}
@@ -280,9 +238,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Genre:</label>
+          <label>Genre:</label>
           <input
-            style={{ float: "right" }}
             type="text"
             name="genre"
             value={input.genre}
@@ -292,9 +249,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Rating:</label>
+          <label>Rating:</label>
           <input
-            style={{ float: "right" }}
             type="number"
             max={10}
             min={0}
@@ -306,9 +262,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Review:</label>
+          <label>Review:</label>
           <textarea
-            style={{ float: "right" }}
             type="text"
             name="review"
             value={input.review}
@@ -318,9 +273,8 @@ const Movies = () => {
           <br />
         </div>
         <div style={{ marginTop: "20px" }}>
-          <label style={{ float: "left" }}>Image URL:</label>
+          <label>Image URL:</label>
           <input
-            style={{ float: "right" }}
             type="text"
             name="image_url"
             value={input.image_url}
@@ -329,7 +283,15 @@ const Movies = () => {
           <br />
           <br />
         </div>
-        <button>submit</button>
+        <Button
+          className="Button btn-daftar"
+          variant="contained"
+          color="secondary"
+          style={{ float: "right", width: "200px" }}
+          onClick={handleSubmit}
+        >
+          submit
+        </Button>
       </form>
     </>
   );

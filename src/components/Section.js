@@ -4,6 +4,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Movies from "../pages/Movies";
+import ListMovie from "../pages/ListMovie";
+import TambahMovie from "../pages/TambahMovie";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { UserContext } from "../context/UserContext";
@@ -32,7 +34,19 @@ const Section = () => {
         <Switch>
           <Route exact path="/" user={user} component={Home} />
           <Route exact path="/about" user={user} component={About} />
-          <PrivateRoute exact path="/movies" user={user} component={Movies} />
+          <Route exact path="/list-movie" user={user} component={ListMovie} />
+          <Route
+            exact
+            path="/tambah-movie"
+            user={user}
+            component={TambahMovie}
+          />
+          <PrivateRoute
+            exact
+            path="/edit-movie"
+            user={user}
+            component={Movies}
+          />
         </Switch>
       </section>
     </>

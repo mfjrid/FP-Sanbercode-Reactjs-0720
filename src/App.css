@@ -94,6 +94,35 @@ table td {
   white-space: nowrap;
 }
 
+table.list-movie td {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+form.tambah-movie {
+  width: 80%;
+}
+
+form.tambah-movie input,
+form.tambah-movie textarea {
+  width: 500px;
+  float: right;
+}
+
+form.tambah-movie div {
+  margin: 20px 0;
+}
+
+form.tambah-movie label {
+  float: left;
+}
+
+h1.judul-section {
+  margin: 40px auto;
+}
+
 h1 {
   text-align: center;
 }

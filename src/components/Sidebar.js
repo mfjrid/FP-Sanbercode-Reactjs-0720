@@ -20,7 +20,7 @@ export default function Sidebar() {
           )}
           {user && (
             <li>
-              <Link to="/movies">Edit Movie</Link>
+              <Link to="/edit-movie">Edit Movie</Link>
             </li>
           )}
           <li>
