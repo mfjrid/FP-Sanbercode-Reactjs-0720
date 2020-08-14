@@ -119,6 +119,10 @@ form.tambah-movie label {
   float: left;
 }
 
+.genre {
+  text-transform: capitalize;
+}
+
 h1.judul-section {
   margin: 40px auto;
 }

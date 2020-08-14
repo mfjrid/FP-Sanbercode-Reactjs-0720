@@ -8,6 +8,7 @@ class Home extends Component {
     super(props);
     this.state = {
       movies: [],
+      games: [],
     };
   }
 
@@ -29,6 +30,24 @@ class Home extends Component {
           };
         });
         this.setState({ movies });
+      });
+
+    axios
+      .get(`https://www.backendexample.sanbersy.com/api/games`)
+      .then((res) => {
+        let games = res.data.map((el) => {
+          return {
+            id: el.id,
+            name: el.name,
+            genre: el.genre,
+            singlePlayer: el.singlePlayer,
+            multiplayer: el.multiplayer,
+            platform: el.platform,
+            release: el.release,
+            image_url: el.image_url,
+          };
+        });
+        this.setState({ games });
       });
   }
 
@@ -54,6 +73,31 @@ class Home extends Component {
                         <p>
                           <b>{item.rating}</b> / 10
                         </p>
+                      </div>
+                    </div>
+                    <img src={item.image_url} alt="Tidak ada gambar" />
+                    <div className="kotak-movie"></div>
+                  </div>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </div>
+
+        <br />
+        <br />
+        <h1>Game List</h1>
+        <br />
+        <div id="article-list">
+          <Grid container fixed>
+            {this.state.games.map((item) => {
+              return (
+                <Grid items xs={4}>
+                  <div className="container-movie">
+                    <div className="konten-movie">
+                      <h3>{item.name}</h3>
+                      <div className="genre">
+                        <p>{item.genre}</p>
                       </div>
                     </div>
                     <img src={item.image_url} alt="Tidak ada gambar" />

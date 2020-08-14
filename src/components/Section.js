@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Movies from "../pages/Movies";
 import ListMovie from "../pages/ListMovie";
 import TambahMovie from "../pages/TambahMovie";
+import ListGame from "../pages/ListGame";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { UserContext } from "../context/UserContext";
@@ -35,6 +36,7 @@ const Section = () => {
           <Route exact path="/" user={user} component={Home} />
           <Route exact path="/about" user={user} component={About} />
           <Route exact path="/list-movie" user={user} component={ListMovie} />
+          <Route exact path="/list-game" user={user} component={ListGame} />
           <Route
             exact
             path="/tambah-movie"

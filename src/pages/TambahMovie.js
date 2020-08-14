@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Movies.css";
 import { Button } from "@material-ui/core";
 
-const Movies = () => {
+const TambahMovie = () => {
   const [movies, setMovies] = useState(null);
   const [input, setInput] = useState({
     title: "",
@@ -297,4 +297,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default TambahMovie;
