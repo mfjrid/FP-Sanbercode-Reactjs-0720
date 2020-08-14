@@ -13,6 +13,7 @@ const About = () => {
         klik register.
       </p>
       <br />
+      <b>Biodata Pembuat Web :</b>
       <ol>
         <li>
           <strong style={{ width: "100px" }}>Nama:</strong> Muhammad Fajar

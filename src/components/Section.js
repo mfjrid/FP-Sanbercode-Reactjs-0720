@@ -6,6 +6,8 @@ import Home from "../pages/Home";
 import Movies from "../pages/Movies";
 import ListMovie from "../pages/ListMovie";
 import TambahMovie from "../pages/TambahMovie";
+import TambahGame from "../pages/TambahGame";
+import EditGame from "../pages/EditGame";
 import ListGame from "../pages/ListGame";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -37,7 +39,7 @@ const Section = () => {
           <Route exact path="/about" user={user} component={About} />
           <Route exact path="/list-movie" user={user} component={ListMovie} />
           <Route exact path="/list-game" user={user} component={ListGame} />
-          <Route
+          <PrivateRoute
             exact
             path="/tambah-movie"
             user={user}
@@ -48,6 +50,18 @@ const Section = () => {
             path="/edit-movie"
             user={user}
             component={Movies}
+          />
+          <PrivateRoute
+            exact
+            path="/tambah-game"
+            user={user}
+            component={TambahGame}
+          />
+          <PrivateRoute
+            exact
+            path="/edit-game"
+            user={user}
+            component={EditGame}
           />
         </Switch>
       </section>

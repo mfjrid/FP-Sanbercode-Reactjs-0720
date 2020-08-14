@@ -28,6 +28,16 @@ export default function Sidebar() {
           </li>
           {user && (
             <li>
+              <Link to="/tambah-game">Tambah Game</Link>
+            </li>
+          )}
+          {user && (
+            <li>
+              <Link to="/edit-game">Edit Game</Link>
+            </li>
+          )}
+          {user && (
+            <li>
               <Link to="/ubah-password">Ubah Password</Link>
             </li>
           )}
