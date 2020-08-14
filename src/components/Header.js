@@ -26,11 +26,6 @@ const Header = () => {
           <li>
             <Link to="/about">About </Link>{" "}
           </li>
-          {user && (
-            <li>
-              <Link to="/movies">Movie List Editor </Link>
-            </li>
-          )}
           {user === null && (
             <li>
               <Link to="/login">Login </Link>
