@@ -12,6 +12,11 @@ const About = () => {
         mengedit data film yang ada, atau jika kamu belum punya akun, silahkan
         klik register.
       </p>
+      <p>
+        Mohon maaf, Website ini belum selesai dibuat dikarenakan akhir-akhir ini
+        saya sedang banyak pekerjaan dan kegiatan yang menyebabkan belum ada
+        waktu luang untuk melanjutkan project ini. Mohon dimaklumi.
+      </p>
       <br />
       <b>Biodata Pembuat Web :</b>
       <ol>
