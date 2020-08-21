@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import SearchIcon from "@material-ui/icons/Search";
-import InputBase from "@material-ui/core/InputBase";
+import { Button } from "@material-ui/core";
 
 const Header = () => {
   const [user, setUser] = useContext(UserContext);
+
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem("user");
@@ -14,14 +14,16 @@ const Header = () => {
   return (
     <header>
       <h1>FilMy.</h1>
-      <div id="search-box">
-        <SearchIcon />
-        <InputBase className="input-search" placeholder="Cari . . ." />
-      </div>
       <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/list-movie">Cari Film</Link>{" "}
+          </li>
+          <li>
+            <Link to="/list-game">Cari Game</Link>{" "}
           </li>
           <li>
             <Link to="/about">About </Link>{" "}

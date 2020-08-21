@@ -1,5 +1,4 @@
-import React, { useContext, useState, Component } from "react";
-import axios from "axios";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import {
   Grid,
